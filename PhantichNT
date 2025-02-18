@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void bai_lam(int n){
+	for(int i = 2; i<=sqrt(n); i++){
+		int tmp = 0;
+		if(n%i==0){
+			while(n%i==0){
+				++tmp;
+				n /= i;
+			}
+			cout << i << "(" << tmp << ")" << " ";
+		}
+		
+	}
+	if(n!=1) cout << n << "(" << 1 << ")";
+	cout << endl;
+}
+int main(){
+	int t; cin >> t;
+	for(int i=1; i<=t; i++){
+		
+		int n; cin >> n;
+		cout << "Test " << i << ": ";
+		bai_lam(n);
+		
+	}
+}
